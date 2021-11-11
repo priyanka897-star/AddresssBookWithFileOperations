@@ -136,7 +136,6 @@ public class AddContact extends PersonDetails {
 	public static void sort(HashMap<Integer,ArrayList<AddContact>> hashMap,SortOptions sortOptions){
         for (int i = 1; i <= hashMap.size(); i++){
         	hashMap.get(i).stream().sorted(sortOptions.comparator).forEach(System.out::println);
-
         }
     }
 
