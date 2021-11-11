@@ -1,8 +1,10 @@
 package addressbooksystem;
 
+import com.google.gson.Gson;
 import com.opencsv.CSVReader;
 import com.opencsv.CSVWriter;
 
+import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.util.ArrayList;
@@ -14,6 +16,7 @@ import java.util.stream.Collectors;
 public class AddContact extends PersonDetails {
 
 	private static AddContact HashMap;
+
 	ArrayList<AddContact> addContactDetails;
 	InputScanner inputScanner = new InputScanner();
 	ContactMain contact = new ContactMain();
@@ -189,6 +192,28 @@ public class AddContact extends PersonDetails {
 			e.printStackTrace();
 		}
 	}
+	public static void writeToFileInJson(ArrayList<AddContact> addContactDetails){
+		try {
+			Gson gson = new Gson();
+			String stream = gson.toJson(addContactDetails);
+			FileWriter fileWriter = new FileWriter("AddressBook.json");
+			fileWriter.write(stream);
+			fileWriter.close();
+		}catch (Exception e){
+			e.printStackTrace();
+		}
+	}
+	public static void readFromFileInJson(){
+		try {
+			Gson gson = new Gson();
+			BufferedReader br = new BufferedReader(new FileReader("AddressBook.json"));
+			ArrayList<AddContact> arrayList = gson.fromJson(br, ArrayList.class);
+			System.out.println(arrayList);
+		}catch (Exception e){
+			e.printStackTrace();
+		}
+	}
+
 
 	public static void search(HashMap<Integer, ArrayList<AddContact>> hashMap) {
 		InputScanner inputScanner = new InputScanner();

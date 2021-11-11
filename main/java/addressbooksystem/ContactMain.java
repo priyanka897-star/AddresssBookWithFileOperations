@@ -55,6 +55,7 @@ public class ContactMain {
 			hashMap.put(i, addContactDetails);
 			AddContact.writeToFile(hashMap);
 			AddContact.writeToFileInOpenCsv(addContactDetails);
+			AddContact.writeToFileInJson(addContactDetails);
 		}
 		for (int i = 1; i <= hashMap.size(); i++) {
 			System.out.println("address book " + i);
@@ -63,9 +64,13 @@ public class ContactMain {
          AddContact.search(hashMap);
 		System.out.println("Reading AddressBook from File");
         AddContact.readFromFile();
+		System.out.println();
 		System.out.println("Reading AddressBook from CSV");
 		AddContact.readFromFileInOpenCsv();
         System.out.println();
+		System.out.println("Reading AddressBook using JSON");
+		AddContact.readFromFileInJson();
+		System.out.println();
         System.out.println("AddressBooks Sorted based on First Name :");
         AddContact.sort(hashMap,SortOptions.NAME);
         System.out.println("AddressBooks Sorted based on city :");
@@ -74,7 +79,5 @@ public class ContactMain {
         AddContact.sort(hashMap,SortOptions.STATE);
         System.out.println("AddressBooks Sorted based on Zip :");
         AddContact.sort(hashMap,SortOptions.ZIP);
-        
-        
 	}
 }
