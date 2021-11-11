@@ -61,23 +61,23 @@ public class ContactMain {
 			System.out.println("address book " + i);
 			System.out.println(hashMap.get(i));
 		}
-         AddContact.search(hashMap);
-		System.out.println("Reading AddressBook from File");
-        AddContact.readFromFile();
-		System.out.println();
-		System.out.println("Reading AddressBook from CSV");
-		AddContact.readFromFileInOpenCsv();
-        System.out.println();
-		System.out.println("Reading AddressBook using JSON");
-		AddContact.readFromFileInJson();
-		System.out.println();
-        System.out.println("AddressBooks Sorted based on First Name :");
-        AddContact.sort(hashMap,SortOptions.NAME);
-        System.out.println("AddressBooks Sorted based on city :");
-        AddContact.sort(hashMap,SortOptions.CITY);
-        System.out.println("AddressBooks Sorted based on state :");
-        AddContact.sort(hashMap,SortOptions.STATE);
-        System.out.println("AddressBooks Sorted based on Zip :");
-        AddContact.sort(hashMap,SortOptions.ZIP);
+               AddContact.search(hashMap);
+	       System.out.println("Reading AddressBook from File");
+               AddContact.readFromFile();
+	       System.out.println();
+	       System.out.println("Reading AddressBook from CSV");
+	       AddContact.readFromFileInOpenCsv();
+       	       System.out.println();
+	       System.out.println("Reading AddressBook using JSON");
+               AddContact.readFromFileInJson();
+	       System.out.println();
+               System.out.println("AddressBooks Sorted based on First Name :");
+               AddContact.sort(hashMap,SortOptions.NAME);
+               System.out.println("AddressBooks Sorted based on city :");
+               AddContact.sort(hashMap,SortOptions.CITY);
+               System.out.println("AddressBooks Sorted based on state :");
+               AddContact.sort(hashMap,SortOptions.STATE);
+               System.out.println("AddressBooks Sorted based on Zip :");
+               AddContact.sort(hashMap,SortOptions.ZIP);
 	}
 }
